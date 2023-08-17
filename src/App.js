@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import FAQ from "./components/FAQ";
+import Header from "./components/Header";
+import { useEffect, useRef, useState } from "react";
 
-function App() {
+export default function App() {
+  const [data, setdata] = useState([
+    {
+      id: 1,
+      question: "What is Lorem Ipsum?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      open: false,
+    },
+    {
+      id: 2,
+      question: "How many programmers does it take to change a light bulb??",
+      answer: "None, we don't solve hardware problems.",
+      open: false,
+    },
+    {
+      id: 2,
+      question: "How many programmers does it take to change a light bulb??",
+      answer: "None, we don't solve hardware problems.",
+      open: false,
+    },
+  ]);
+
+  const toggleFAQ = (index) => {
+    setdata(
+      data.map((faq, i) => {
+        if (i == index) {
+          faq.open = !faq.open;
+        } else {
+          faq.open = false;
+        }
+        return faq;
+      })
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+      <Header />
+      <div className="faqs">
+        {data.map((faq, i) => (
+          <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
+        ))}
+      </div>
+    </section>
   );
 }
-
-export default App;
