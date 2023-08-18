@@ -6,12 +6,11 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #eee;
+  background-color: #29293f;
 }
 
 code {
@@ -24,8 +23,8 @@ header {
   justify-content: center;
   align-content: center;
   padding: 15px;
-  background-color: #3c3c3c;
-  border-bottom: 3px solid #56e38b;
+  background-color: #292947;
+  /* border-bottom: 3px solid #56e38b; */
 }
 
 header h1 {
@@ -45,16 +44,21 @@ header h1 {
 .faqs .faq {
   margin: 15px;
   padding: 15px;
-  background-color: white;
+  background-color: transparent;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border: 3px solid rgb(118, 85, 185);
+}
+
+.faqs .faq:hover {
+  box-shadow: 2px 2px 9px rgb(118, 85, 185, 0.5);
 }
 
 .faqs .faq .faq-question {
   position: relative;
   font-size: 20px;
   padding-right: 70px;
-
+  color: white;
   transition: all 0.4s ease;
 }
 
@@ -80,6 +84,7 @@ header h1 {
   max-height: 0;
   overflow-y: hidden;
   transition: all 0.4s ease-in;
+  color: white;
 }
 
 .faqs .faq.open .faq-question {
